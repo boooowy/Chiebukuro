@@ -21,6 +21,7 @@
 		61DA725318E0725700FA5335 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61DA723518E0725700FA5335 /* UIKit.framework */; };
 		61DA725B18E0725700FA5335 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 61DA725918E0725700FA5335 /* InfoPlist.strings */; };
 		61DA725D18E0725700FA5335 /* ChiebukuroTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 61DA725C18E0725700FA5335 /* ChiebukuroTests.m */; };
+		61DA726818E0732800FA5335 /* QuestionListViewConroller.m in Sources */ = {isa = PBXBuildFile; fileRef = 61DA726718E0732800FA5335 /* QuestionListViewConroller.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,8 @@
 		61DA725818E0725700FA5335 /* ChiebukuroTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ChiebukuroTests-Info.plist"; sourceTree = "<group>"; };
 		61DA725A18E0725700FA5335 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		61DA725C18E0725700FA5335 /* ChiebukuroTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChiebukuroTests.m; sourceTree = "<group>"; };
+		61DA726618E0732800FA5335 /* QuestionListViewConroller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionListViewConroller.h; sourceTree = "<group>"; };
+		61DA726718E0732800FA5335 /* QuestionListViewConroller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionListViewConroller.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +122,8 @@
 				61DA724718E0725700FA5335 /* ViewController.m */,
 				61DA724918E0725700FA5335 /* Images.xcassets */,
 				61DA723818E0725700FA5335 /* Supporting Files */,
+				61DA726618E0732800FA5335 /* QuestionListViewConroller.h */,
+				61DA726718E0732800FA5335 /* QuestionListViewConroller.m */,
 			);
 			path = Chiebukuro;
 			sourceTree = "<group>";
@@ -250,6 +255,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				61DA724818E0725700FA5335 /* ViewController.m in Sources */,
+				61DA726818E0732800FA5335 /* QuestionListViewConroller.m in Sources */,
 				61DA724218E0725700FA5335 /* AppDelegate.m in Sources */,
 				61DA723E18E0725700FA5335 /* main.m in Sources */,
 			);
