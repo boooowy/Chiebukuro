@@ -7,6 +7,7 @@
 //
 
 #import "QuestionListViewConroller.h"
+#import "WebViewController.h"
 
 @interface QuestionListViewConroller()
 @property(strong,nonatomic) NSArray *questions;
@@ -38,7 +39,8 @@
         }
         
         self.questions = jsonDictionary[@"ResultSet"][@"Result"];
-        [self performSelectorOnMainThread:@selector(reloadTableView) withObject:nil waitUntilDone:YES];
+        NSLog(@"queston:%@", self.questions);
+        [self.tableView performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:YES];
     }];
     
     // 通信開始
@@ -62,15 +64,29 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-    }
-    cell.textLabel.text = self.questions[indexPath.row];
+    //UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+//    
+//    if (cell == nil) {
+//        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+//    }
+    NSDictionary *questionDic = self.questions[indexPath.row];
+    NSLog(@"result:%@",questionDic[@"Category"]);
+    cell.textLabel.text = questionDic[@"Content"];
+    cell.detailTextLabel.text = questionDic[@"Category"];
+
     return cell;
 }
 
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    UITableViewCell *cell = (UITableViewCell*)sender;
+    
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+    NSDictionary *question = self.questions[indexPath.row];
+    WebViewController *viewController = [segue destinationViewController];
+    viewController.url = [NSURL URLWithString:question[@"QuestionUrl"]];
+}
 
 
 
